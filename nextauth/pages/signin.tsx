@@ -1,12 +1,27 @@
 import React from 'react'
 import Link from 'next/link'
 import NextAuth from 'next-auth/next';
-import { useSession,signIn,signOut } from "next-auth/react"
+import { useSession,signIn,signOut, getSession } from "next-auth/react"
+import { redirect } from 'react-router-dom';
 interface signIn{
   account?:String;
   profile?:any; 
  
 }
+// export default async function getServerSideProps({req}:any) {
+//   const session=await getSession({req})
+//   if(!session){
+//     return(
+//       redirect: {
+//         destination: '/blogs'
+//         permanent:false
+//       }
+//     )
+//   }
+//   return (
+//     props: ({session}:any)
+//   )
+// }
 const signin = () => {
   // async function HandleGoogle(){
   //   signIn('google',{callbackUrl:"http://localhost:3000"})
@@ -15,6 +30,8 @@ const signin = () => {
   async function HandleGithub(){
     signIn('github',{callbackUrl:"http://localhost:3000"})   
   }
+
+  
 //  console.log(NextAuth,"10");
   return (
     <section className="h-screen">
@@ -30,7 +47,7 @@ const signin = () => {
       <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
         <form>
          
-          <div className="mb-6">
+          <div className="mb-6 ">
             <input
               type="text"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"

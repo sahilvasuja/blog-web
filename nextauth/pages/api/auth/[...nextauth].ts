@@ -4,6 +4,7 @@ import { User,Account } from "next-auth";
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
 import GoogleAccount  from 'next-auth/providers';
+import CredentialsProvider from "next-auth/providers/credentials";
 // import { GoogleAccount, GoogleProvider } from 'next-auth/providers/google';
 interface Env{
     clientId?:any;
@@ -30,9 +31,26 @@ export const authOptions = {
             response_type: "code"
           }
         }
-    })
+    }),
+    // CredentialsProvider({
+    //   name: "Credentials",
+    //   credentials: {
+    //     username: { label: "Username", type: "text", placeholder: "jsmith" },
+    //     password: { label: "Password", type: "password" }
+    //   },
+    //   async authorize(credentials, req) {
+    //    const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
+    //     if (user) {
+    //       return user
+    //     } 
+    //     else {
+    //         return null
+    //     }
+    //   }
+    // })
     
-  ]
+  ],
+  secret: process.env.JWT_SECRET
   // jwt: {
   //   encryption: true,
   // },

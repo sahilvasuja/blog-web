@@ -2,47 +2,50 @@ import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { useSession } from "next-auth/react"
 import Image from 'next/image';
-import backpackPic from '/Users/sahilvasuja/Downloads/blogs_website_img/backpack.png'
-import cafePic from '/Users/sahilvasuja/Downloads/blogs_website_img/cafe.png'
-import focuslaptopPic from '/Users/sahilvasuja/Downloads/blogs_website_img/focus-on-laptop.png'
-import makingPic from '/Users/sahilvasuja/Downloads/blogs_website_img/making-notes.png'
-import mobilePic from '/Users/sahilvasuja/Downloads/blogs_website_img/mobile.png'
-import podastPic from '/Users/sahilvasuja/Downloads/blogs_website_img/podast.png'
-import sunsetPic from '/Users/sahilvasuja/Downloads/blogs_website_img/sunset.png'
-import whiteboardPic from '/Users/sahilvasuja/Downloads/blogs_website_img/whiteboard.png'
-import settingPic from '/Users/sahilvasuja/Downloads/blogs_website_img/women-sitting-down.png'
+// import backpackPic from '/Users/sahilvasuja/Desktop/backpack.png'
+// import cafePic from '/Users/sahilvasuja/Downloads/blogs_website_img/cafe.png'
+// import focuslaptopPic from '/Users/sahilvasuja/Downloads/blogs_website_img/focus-on-laptop.png'
+// import makingPic from '/Users/sahilvasuja/Downloads/blogs_website_img/making-notes.png'
+// import mobilePic from '/Users/sahilvasuja/Downloads/blogs_website_img/mobile.png'
+// import podastPic from '/Users/sahilvasuja/Downloads/blogs_website_img/podast.png'
+// import sunsetPic from '/Users/sahilvasuja/Downloads/blogs_website_img/sunset.png'
+// import whiteboardPic from '/Users/sahilvasuja/Downloads/blogs_website_img/whiteboard.png'
+// import settingPic from '/Users/sahilvasuja/Downloads/blogs_website_img/women-sitting-down.png'
+
 interface Users{
   id?:number;
   name?:string;
  
 }
-const USERS = gql`
-  {
-    users {
-      id
-      name
-      last_seen
-      created_at
-    }
-  }
-`;
+// const USERS = gql`
+//   {
+//     users {
+//       id
+//       name
+//       last_seen
+//       created_at
+//     }
+//   }
+// `;
 
 export const Users = () => {
-  const { data: session, status }: any = useSession()
+  const { data: session, status }: any = useSession()   
 
   // if (status === "authenticated") {
   //   return <p>Signed in as{status} {session.user.name}</p>
   // }
+//    console.log({backpackPic},"36");
   return (
     <>
     <main className="container mx-auto max-w-6xl px-5">
         <article className="border-t border-cw-grey-100 flex justify-between py-10 flex-col md:flex-row">
+       
             <a href="#" className="md:w-1/2 md:mr-12 hover:bg-cw-blue-600">
-           
-   
-                <Image src={backpackPic} alt="Backpacker outside by sea" className="border-sm hover:opacity-75 ease-in duration-100" />
+          
+                <img src="/backpack.png"  alt="Backpacker outside by sea" className="border-sm hover:opacity-75 ease-in duration-100" />
             </a>
             <div className="md:w-1/2 mt-4">
+                
                 <a href="#" className="text-cw-blue-300 hover:text-cw-blue-600 hover:underline text-sm mb-1 block">Travel</a>
                 <h1 className=" mb-3"><a href="#" className=" font-work-sans text-3xl text-cw-grey-800 leading-tight hover:text-cw-blue-600 hover:underline">Backbacking planning tips for the summer</a></h1>
                 <p className="leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui. Vim quodsi fabellas rationibus ei, imperdiet appellantur eum ne, consetetur intellegam usu an. Has eu disputationi comprehensam vituperatoribus. Pri quod brute urbanitas ex, omnes offendit mei ut. Id quodsi atomorum definitiones est.</p>
@@ -51,38 +54,38 @@ export const Users = () => {
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 row-gap-6 pb-10">
             <article>
                 <a href="#" className="hover:bg-cw-blue-600 block">
-                    <Image src={whiteboardPic} alt="whiteboard meeting" className="mb-2 hover:opacity-75 ease-in duration-100" />
+                    <img src="/whiteboard.png" alt="whiteboard meeting" className="mb-2 hover:opacity-75 ease-in duration-100" />
                 </a>
                 <a href="#" className="text-cw-blue-300 hover:text-cw-blue-600 hover:underline text-sm mb-1 block">Business</a>
                 <h2><a href="#" className=" font-work-sans text-xl text-cw-grey-900 hover:text-cw-blue-600 hover:underline">Ten tips for productive meetings</a></h2>
                 <p className="text-sm leading-loose">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui. Vim quodsi fabellas rationibus...</p>
             </article>
             <article>
-                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><Image src={cafePic} alt="Female sitting in the cafe" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
+                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><img src="/cafe.png" alt="Female sitting in the cafe" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
                 <a href="#" className="text-cw-blue-300 text-sm block mb-1 hover:text-cw-blue-600 hover:underline">Travel</a>
                 <h2 className="mb-1"><a href="#" className="text-xl  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Adjusting to leaving in a new city</a></h2>
                 <p className="text-sm leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui....</p>
             </article>
             <article>
-                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><Image src={podastPic} alt="Microphone" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
+                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><img src="/podast.png" alt="Microphone" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
                 <a href="#" className="text-cw-blue-300 text-sm block mb-1 hover:text-cw-blue-600 hover:underline">Technology</a>
                 <h2 className="mb-1"><a href="#" className="text-xl  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Setting up your first podcast</a></h2>
                 <p className="text-sm leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui....</p>
             </article>
             <article>
-                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><Image src={mobilePic} alt="Female typing on mobile phone" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
+                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><img src="/mobile.png" alt="Female typing on mobile phone" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
                 <a href="#" className="text-cw-blue-300 text-sm block mb-1 hover:text-cw-blue-600 hover:underline">Technology</a>
                 <h2 className="mb-1"><a href="#" className="text-xl  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Rumours on the new phones launching this year</a></h2>
                 <p className="text-sm leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui. Vim quodsi fabellas rationibus...</p>
             </article>
             <article>
-                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><Image src={sunsetPic} alt="Person walking with a sunset background" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
+                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><img src="/sunset.png" alt="Person walking with a sunset background" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
                 <a href="#" className="text-cw-blue-300 text-sm block mb-1 hover:text-cw-blue-600 hover:underline">Travel</a>
                 <h2 className="mb-1"><a href="#" className="text-xl  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Our favorite walking locations</a></h2>
                 <p className="text-sm leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui....</p>
             </article>
             <article>
-                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><Image src={settingPic} alt="Female smiling with a laptop in front of her" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
+                <a href="#" className="block mb-2 hover:bg-cw-blue-600"><img src="/women-sitting-down.png" alt="Female smiling with a laptop in front of her" className="border-sm hover:opacity-75 ease-in duration-100"/></a>
                 <a href="#" className="text-cw-blue-300 text-sm block mb-1 hover:text-cw-blue-600 hover:underline">Buisness</a>
                 <h2 className="mb-1"><a href="#" className="text-xl  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Our tips on the perfect home office</a></h2>
                 <p className="text-sm leading-relaxed">Lorem ipsum dolor sit amet, fugit persius inermis eos ad, eu oblique tacimates qui. Vim quodsi fabellas rationibus...</p>
@@ -90,12 +93,12 @@ export const Users = () => {
         </div>
         <section className="flex flex-col md:flex-row justify-between pb-10 border-t border-cw-grey-100 pt-10 ">
             <div className="md:w-1/2 md:mr-10 mb-6 md:mb-0">
-                <a href="#" className="mb-2 block  hover:bg-cw-blue-600"><Image className="rounded-sm hover:opacity-75 ease-in duration-100" src={makingPic} alt="Person making notes by a laptop" /> </a>
+                <a href="#" className="mb-2 block  hover:bg-cw-blue-600"><img className="rounded-sm hover:opacity-75 ease-in duration-100" src="/making-notes.png" alt="Person making notes by a laptop" /> </a>
                 <h3 className="mb-1"><a href="#" className="text-lg  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">Join our online digital university</a> </h3>
                 <p className="leading-relaxed">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
             </div>
             <div className=" md:w-1/2">
-                <a href="#" className="mb-2 block  hover:bg-cw-blue-600"><Image className="rounded-sm hover:opacity-75 ease-in duration-100" src={focuslaptopPic} alt="Male is focus on his laptop" /> </a>
+                <a href="#" className="mb-2 block  hover:bg-cw-blue-600"><img className="rounded-sm hover:opacity-75 ease-in duration-100" src="/focus-on-laptop.png" alt="Male is focus on his laptop" /> </a>
                 <h3 className="mb-1"><a href="#" className="text-lg  text-cw-grey-800  font-work-sans leading-tight hover:text-cw-blue-600 hover:underline">This month webinar all your tax questions</a> </h3>
                 <p className="leading-relaxed">Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
             </div>

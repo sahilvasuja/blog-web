@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={}
+self.__REACT_LOADABLE_MANIFEST={"createblogs.tsx -> tw-elements":{"id":"createblogs.tsx -> tw-elements","files":["static/chunks/node_modules_tw-elements_dist_js_index_min_js.js"]}}

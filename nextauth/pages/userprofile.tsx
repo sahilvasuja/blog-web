@@ -1,11 +1,27 @@
 import Link from "next/link";
 import { useSession } from "next-auth/react"
-import React from "react";
+import { getSession } from 'next-auth/react'
+
+import React,{useEffect,useState} from "react";
 import img from 'next/image';
-// import 'tw-elements';
+//  import 'tw-elements';
+
 const Userprofile=()=>{
     const { data: session, status }: any = useSession()
+    const sessions =  getSession()
+    const [TwElements, setTwElements] = useState('');
+    useEffect(() => {
+      import('tw-elements').then((module) => {
+        setTwElements(module.default);
+      });
+    }, []);
+    if (!TwElements) {
+      return <div>Loading...</div>;
+    }
 
+    if(session && session.user){ 
+
+    
     return(
         <>
            
@@ -132,5 +148,9 @@ const Userprofile=()=>{
 
         </>
     )
+    }
+    else{
+        return (<div>hello</div>)
+    }
 }
 export default Userprofile

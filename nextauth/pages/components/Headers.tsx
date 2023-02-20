@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router';
@@ -6,6 +6,7 @@ const Headers = () => {
   const router = useRouter();
   const { data: session, status }: any = useSession()
   
+
   function profile(){
     console.log(session.user, "8");
     console.log("first")
@@ -40,7 +41,7 @@ const Headers = () => {
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
     <ul className="flex flex-col p-4 mt-4 border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
       <li>
-        <Link href="#" className="block py-2 pl-3 pr-4  hover:text-green-300 text-white rounded md:bg-transparent md:p-0" aria-current="page">List</Link>
+        <Link href="/list" className="block py-2 pl-3 pr-4  hover:text-green-300 text-white rounded md:bg-transparent md:p-0" aria-current="page">List</Link>
       </li>
       <li>
         <Link href="/createblogs" className="block py-2 pl-3 pr-4  hover:text-green-300 text-white rounded md:bg-transparent md:p-0" aria-current="page">Create</Link>
